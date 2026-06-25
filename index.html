@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether Player | Premium Audio Experience</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Animated Gradients -->
+    <div class="fluid-background">
+        <div class="blob blob-indigo"></div>
+        <div class="blob blob-emerald"></div>
+    </div>
+
+    <!-- Main Music Player Container -->
+    <div class="player-wrapper">
+        <!-- Main Interface Card -->
+        <main class="player-card">
+            <!-- Header -->
+            <div class="player-header">
+                <button class="header-btn" id="playlist-toggle" title="Show Playlist">
+                    <i class="fa-solid fa-list-ul"></i>
+                </button>
+                <div class="player-branding">
+                    <i class="fa-solid fa-compact-disc disk-logo-icon"></i>
+                    <span>Aether<span>Player</span></span>
+                </div>
+                <button class="header-btn" id="theme-toggle" title="Toggle Theme">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+            </div>
+
+            <!-- Album Art Zone -->
+            <div class="album-art-container">
+                <div class="art-ring">
+                    <img src="" alt="Album Artwork" id="album-art" class="album-art">
+                </div>
+                <!-- Mini Equalizer Bars (animated while playing) -->
+                <div class="equalizer" id="equalizer">
+                    <span class="eq-bar bar-1"></span>
+                    <span class="eq-bar bar-2"></span>
+                    <span class="eq-bar bar-3"></span>
+                    <span class="eq-bar bar-4"></span>
+                    <span class="eq-bar bar-5"></span>
+                </div>
+            </div>
+
+            <!-- Song Metadata Info -->
+            <div class="track-info">
+                <h1 class="track-title" id="track-title">Song Title</h1>
+                <p class="track-artist" id="track-artist">Artist Name</p>
+            </div>
+
+            <!-- Audio Slider Area (Progress Bar) -->
+            <div class="slider-container">
+                <div class="time-readout">
+                    <span id="current-time">0:00</span>
+                    <span id="total-duration">0:00</span>
+                </div>
+                <input type="range" id="progress-bar" class="progress-slider" min="0" max="100" value="0">
+            </div>
+
+            <!-- Core Controls Panel -->
+            <div class="controls-panel">
+                <!-- Shuffle Toggle -->
+                <button class="control-btn mini-btn" id="shuffle-btn" title="Shuffle Tracks">
+                    <i class="fa-solid fa-shuffle"></i>
+                </button>
+                
+                <!-- Previous Button -->
+                <button class="control-btn" id="prev-btn" title="Previous Track">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                
+                <!-- Play/Pause Button (Major CTA) -->
+                <button class="control-btn play-btn" id="play-btn" title="Play / Pause">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                
+                <!-- Next Button -->
+                <button class="control-btn" id="next-btn" title="Next Track">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+                
+                <!-- Repeat Toggle -->
+                <button class="control-btn mini-btn" id="repeat-btn" title="Repeat Track">
+                    <i class="fa-solid fa-repeat"></i>
+                </button>
+            </div>
+
+            <!-- Volume Control Bar -->
+            <div class="volume-panel">
+                <button class="volume-btn" id="mute-btn" title="Mute Volume">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <input type="range" id="volume-bar" class="volume-slider" min="0" max="100" value="70">
+            </div>
+        </main>
+
+        <!-- Dynamic Slide-out Playlist Drawer -->
+        <aside class="playlist-drawer" id="playlist-drawer">
+            <div class="drawer-header">
+                <h3>Track Playlist</h3>
+                <button class="close-drawer-btn" id="playlist-close" title="Close Playlist">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="playlist-queue" id="playlist-queue">
+                <!-- Javascript will load queue elements -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Hidden audio element -->
+    <audio id="audio-player" src=""></audio>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+</body>
+</html>
